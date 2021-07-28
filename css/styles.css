@@ -59,6 +59,10 @@ font-family: 'Alfa Slab One', cursive;
   background-color: #F3A330;
 }
 
+.red-color{
+  background-color: red;
+}
+
 .rounded{
   border-radius: 5px;
 }
@@ -70,9 +74,19 @@ font-family: 'Alfa Slab One', cursive;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
 }
-
+img{
+  width: 100%;
+}
 .nav-ham{
   visibility: hidden;
+}
+
+.image-div{
+    /* width: 720px;
+    height: 478px; */
+    width: 50rem;
+    height: 30rem;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 500px) {
@@ -85,5 +99,13 @@ font-family: 'Alfa Slab One', cursive;
     margin-top: 1rem;
     text-align: right;
   }
+  .image-div{
+    /* width: 720px;
+    height: 478px; */
+    width: 5rem;
+    height: 3rem;
+    overflow: hidden;
+  }
+
 
 }
