@@ -13,7 +13,6 @@ function getLoadFox(){
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://randomfox.ca/floof/');  // http://shibe.online/api/shibes?count=[1-100]&urls=[true/false]&httpsUrls=[true/false]
 
-  var response = [];
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
 
