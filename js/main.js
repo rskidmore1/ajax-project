@@ -20,12 +20,7 @@ function getLoadFox(){
     console.log(xhr.status);
     console.log(xhr.response);
 
-    response.push(xhr.response);
-
-    image = response[0].image;
-    // console.log(image)
-
-    summonImg.setAttribute("src", image)
+    summonImg.setAttribute("src", xhr.response.image)
 
 
 

@@ -20,8 +20,7 @@ header{
 
 .alfa-font{
 font-family: 'Alfa Slab One', cursive;
-/* font-weight: light; */
-}
+ }
 
 .light-font{
   color: #FAF2E4;
@@ -82,8 +81,7 @@ img{
 }
 
 .image-div{
-    /* width: 720px;
-    height: 478px; */
+
     width: 50rem;
     height: 30rem;
     overflow: hidden;
@@ -100,8 +98,7 @@ img{
     text-align: right;
   }
   .image-div{
-    /* width: 720px;
-    height: 478px; */
+
     width: 5rem;
     height: 3rem;
     overflow: hidden;
