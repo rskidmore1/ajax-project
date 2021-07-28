@@ -1,9 +1,7 @@
 /* exported data */
 
 var data = {
-  collection: [
-    { foxImage: '', quote: ''}
-  ]
+  collection: []
 };
 
 
