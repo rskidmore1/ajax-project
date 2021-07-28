@@ -1,8 +1,8 @@
 /* exported data */
-// debugger;
+
 var data = {
   collection: [
-    { foxImage: '', quote: '' }
+    { foxImage: '', quote: ''}
   ]
 };
 
