@@ -12,6 +12,9 @@ header{
   margin-right: auto;
 
 }
+main{
+  font-family: 'Open Sans', sans-serif;
+}
 
 
 .logo{
@@ -69,9 +72,13 @@ font-family: 'Alfa Slab One', cursive;
   border: 0 solid black;
 }
 
-.summon-btn{
-  margin-top: 1rem;
+.main-btn-margin{
+    margin-top: 1rem;
   padding: 0.5rem 1rem;
+}
+
+.warning{
+  text-align: center;
 }
 img{
   width: 100%;
