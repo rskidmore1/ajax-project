@@ -2,7 +2,7 @@
 
 var data = {
   collection: [
-    { foxImage: '', quote: '', bad: false }
+    { foxImage: '', quote: '' }
   ]
 };
 

@@ -28,18 +28,27 @@ function getLoadFox() {
 
 function rejectFox() {
   summonBtn.classList.remove('hidden');
+
   acceptBtnDiv.classList.add('hidden');
+
   summonImg.setAttribute('src', 'images/pleasesummon.png');
+
+  var warningText = document.querySelector('.warning');
+  warningText.textContent = '';
 
 }
 
 function acceptFox() {
   summonBtn.classList.remove('hidden');
-  acceptBtnDiv.classList.add('hidden');
-  summonImg.setAttribute('src', 'images/pleasesummon.png');
-  data.collection.push({ foxImage: image, quote: '' });
-}
 
+  acceptBtnDiv.classList.add('hidden');
+
+  summonImg.setAttribute('src', 'images/pleasesummon.png');
+
+  // var warningText = document.querySelector('.warning');
+  data.collection.push({ foxImage: image, quote: '' });
+
+}
 // collectionLoad function
 /*
 function collectionLoad(query) {
