@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +12,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" crossorigin="anonymous"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
 </head>
+
 <body>
   <header>
     <div class="container">
@@ -34,20 +41,59 @@
   </header>
   <div class="container">
     <main>
-      <div class="row">
-        <div class="column-full ">
-          <div class="image-div center" >
-           <img class="image center " src="images/fox.png" />
+
+      <div class="summon-view hidden" data-view="summon">
+        <div class="row">
+          <div class="column-full ">
+            <div class="image-div center">
+              <img class="image center " src="images/pleasesummon.png" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row summon-btn main-btn-margin" data-view="summon-button">
+          <div class="column-full">
+            <button class=" main-btn-margin center orange-color rounded no-border light-font">Summon</button>
+          </div>
+        </div>
+        <div class="row accept-btn-div hidden" data-view="accept-reject-button">
+          <div class="column-half width-50">
+            <button class="accept-btn main-btn-margin right orange-color rounded no-border light-font">Accept</button>
+          </div>
+          <div class="column-half width-50">
+            <button class=" reject-btn main-btn-margin red-color rounded no-border light-font">Reject</button>
           </div>
         </div>
       </div>
-      <div class="row summon-btn " data-view="summon-button">
-        <div class="column-full">
-         <button class="summon-btn center orange-color rounded no-border light-font">Summon</button>
+
+      <div class="collection-view center" data-view="collection">
+
+        <div class="row">
+          <div class="column-third collection-item">
+            <img class="collection-img" src="images/fox.png">
+          </div>
+          <div class="column-third collection-item">
+            <img class="collection-img" src="images/fox.png">
+          </div>
+          <div class="column-third collection-item">
+            <img class="collection-img" src="images/fox.png">
+          </div>
         </div>
+
+        <div class="row">
+          <div class="column-third collection-item">
+            <img class="collection-img" src="images/fox.png">
+          </div>
+          <div class="column-third collection-item">
+            <img  class="collection-img" src="images/fox.png">
+          </div>
+          <div class="column-third collection-item">
+            <img class="collection-img" src="images/fox.png">
+          </div>
+        </div>
+
+
       </div>
-
-
 
     </main>
   </div>
