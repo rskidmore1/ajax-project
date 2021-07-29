@@ -114,6 +114,10 @@ img {
   height: 15rem;
 }
 
+.img-row {
+  flex-wrap: wrap;
+}
+
 @media screen and (max-width: 500px) {
   .nav {
     display: none;
