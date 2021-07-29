@@ -33,6 +33,6 @@
   }
 
   .column-third {
-    width: calc(100% / 3);
+    width: calc(80% / 3);
   }
 }
