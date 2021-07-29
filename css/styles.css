@@ -50,7 +50,9 @@ main {
 
 .image {
   margin-top: 2rem;
+  height: 30rem;
   width: 70%;
+  object-fit: scale-down;
 }
 
 .orange-color {
@@ -116,6 +118,20 @@ img {
 
 .img-row {
   flex-wrap: wrap;
+}
+
+.release-padding {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.overlay {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  background: rgba(22, 22, 22, 0.596);
 }
 
 @media screen and (max-width: 500px) {

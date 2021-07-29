@@ -31,8 +31,8 @@
         </div>
         <div class="column-half width-50">
           <nav class="nav right spacing">
-            <a href="" class="light-font no-decoration">Summon</a>
-            <a href="" class="light-font no-decoration">Collection</a>
+            <a href="" class="summon-a light-font no-decoration">Summon</a>
+            <a href="" class="collection-a light-font no-decoration">Collection</a>
           </nav>
           <i class="nav-ham  right fas fa-bars"></i>
         </div>
@@ -51,12 +51,12 @@
           </div>
         </div>
 
-        <div class="row summon-btn main-btn-margin" data-view="summon-button">
+        <div class="row summon-btn main-btn-margin">
           <div class="column-full">
             <button class=" main-btn-margin center orange-color rounded no-border light-font">Summon</button>
           </div>
         </div>
-        <div class="row accept-btn-div hidden" data-view="accept-reject-button">
+        <div class="row accept-btn-div hidden" >
           <div class="column-half width-50">
             <button class="accept-btn main-btn-margin right orange-color rounded no-border light-font">Accept</button>
           </div>
@@ -66,24 +66,49 @@
         </div>
       </div>
 
+
       <div class="collection-view center" data-view="collection">
 
         <div class="row img-row">
           <!-- for reference: editing collection view  -->
           <!-- <div class="column-third collection-item">
-            <img class="collection-img" src="images/fox.png">
+            <img class="collection-img" id-number="" src="images/fox.png">
           </div>
           <div class="column-third collection-item">
-            <img class="collection-img" src="images/fox.png">
+            <img class="collection-img" id-number="" src="images/fox.png">
           </div>
           <div class="column-third collection-item">
-            <img class="collection-img" src="images/fox.png">
+            <img class="collection-img" id-number="" src="images/fox.png">
           </div> -->
         </div>
+
       </div>
 
 
+      <div class="profile-view" data-view="profile">
+        <div class="overlay hidden"></div>
+        <div class="row">
+          <div class="column-full ">
+            <div class="image-div center">
+              <img class="profile-img image center " id-number="" src="images/pleasesummon.png" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-full ">
+            <p class="warning"></p>
+          </div>
+        </div>
 
+        <div class="row profile-btn-div">
+          <div class="column-half width-50">
+            <button class="quote-btn main-btn-margin right orange-color rounded no-border light-font">Quote</button>
+          </div>
+          <div class="column-half width-50">
+            <button class=" release-btn release-padding main-btn-margin red-color rounded no-border light-font">Release me</button>
+          </div>
+        </div>
+      </div>
 
 
     </main>

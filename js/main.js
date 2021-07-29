@@ -11,6 +11,12 @@ var acceptBtn = document.querySelector('.accept-btn');
 
 var collectionView = document.querySelector('.collection-view');
 
+var foxProfile = document.querySelector('.img-row');
+
+var collectionA = document.querySelector('.collection-a');
+
+var summonA = document.querySelector('.summon-a');
+
 var image = '';
 
 function getLoadFox() {
@@ -47,6 +53,7 @@ function acceptFox() {
 
   // var warningText = document.querySelector('.warning');
   data.collection.push({ foxImage: image, quote: '' });
+  // switchView('')
 
 }
 
@@ -60,12 +67,25 @@ function collectionLoad(query) {
       var collectionImg = document.createElement('img');
       collectionImg.classList.add('collection-img');
       collectionImg.setAttribute('src', data.collection[i].foxImage);
+      collectionImg.setAttribute('id-number', i);
       thirdColdiv.appendChild(collectionImg);
       query.childNodes[1].appendChild(thirdColdiv);
     }
 
   }
   return query;
+}
+
+function loadProfile(event) {
+  if (event.target.tagName === 'IMG') {
+    // switchView('profile');
+    // consolesole.log('fox profile clicked');
+    // consolesole.log(event.target.getAttribute('id-number'));
+    // consolesole.log(event.target.src);
+    var profileImg = document.querySelector('.profile-img');
+    profileImg.setAttribute('src', event.target.src);
+    profileImg.setAttribute('id-number', event.target.getAttribute('id-number'));
+  }
 }
 
 summonBtn.addEventListener('click', getLoadFox);
@@ -76,4 +96,32 @@ acceptBtn.addEventListener('click', acceptFox);
 
 window.addEventListener('DOMContentLoaded', function (event) {
   collectionLoad(collectionView);
+  // switchView(data.view);
 });
+
+foxProfile.addEventListener('click', loadProfile);
+
+function summonView() {
+  // switchView('summon');
+}
+function collectionShow() {
+  // debugger;
+  // switchView('collection');
+}
+
+summonA.addEventListener('click', summonView);
+
+collectionA.addEventListener('click', collectionShow);
+// switchview
+// function switchView(view) {
+//   var dataViewList = document.querySelectorAll('div[data-view]');
+//   for (var i = 0; i < dataViewList.length; i++) {
+//     if (dataViewList[i].getAttribute('data-view') !== view) {
+//       dataViewList[i].classList.add('hidden');
+//     } else if (dataViewList[i].getAttribute('data-view') === view) {
+//       dataViewList[i].classList.remove('hidden');
+//     }
+//   }
+//   data.view = view;
+
+// }
