@@ -49,47 +49,7 @@ function acceptFox() {
   data.collection.push({ foxImage: image, quote: '' });
 
 }
-// collectionLoad function
-/*
-function collectionLoad(query) {
 
-  for (var i = 0; i < data.collection.length; i++) {
-    if (i < 3) {
-      var thirdColdiv = document.createElement('div');
-      thirdColdiv.classList.add('column-third');
-      thirdColdiv.classList.add('collection-item');
-      var collectionImg = document.createElement('img');
-      collectionImg.classList.add('collection-img');
-      collectionImg.setAttribute('src', data.collection[i].foxImage);
-      thirdColdiv.appendChild(collectionImg);
-      query.childNodes[1].appendChild(thirdColdiv);
-    } else if (i < 6) {
-      thirdColdiv = document.createElement('div');
-      thirdColdiv.classList.add('column-third');
-      thirdColdiv.classList.add('collection-item');
-      collectionImg = document.createElement('img');
-      collectionImg.classList.add('collection-img');
-      collectionImg.setAttribute('src', data.collection[i].foxImage);
-      thirdColdiv.appendChild(collectionImg);
-      query.childNodes[3].appendChild(thirdColdiv);
-
-    } else if (i < 7) {
-      thirdColdiv = document.createElement('div');
-      thirdColdiv.classList.add('column-third');
-      thirdColdiv.classList.add('collection-item');
-      collectionImg = document.createElement('img');
-      collectionImg.classList.add('collection-img');
-      collectionImg.setAttribute('src', data.collection[i].foxImage);
-      thirdColdiv.appendChild(collectionImg);
-      query.childNodes[5].appendChild(thirdColdiv);
-    } else {
-      break;
-    }
-
-  }
-  return query;
-}
-*/
 function collectionLoad(query) {
 
   for (var i = 0; i < data.collection.length; i++) {
