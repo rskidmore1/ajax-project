@@ -2,7 +2,8 @@
 
 var data = {
   collection: [],
-  view: 'summon'
+  view: 'summon',
+  editing: []
 };
 
 var previousFormEntries = localStorage.getItem('collection');
