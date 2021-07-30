@@ -120,8 +120,9 @@ function releaseFox() {
   data.collection.splice(profileIndex, 1);
   var modalDiv = document.querySelector('.modal-div');
   modalDiv.classList.add('hidden');
-  var foxImg = document.querySelectorAll('img[id-number="' + profileIndex + '"]');
-  foxImg[0].parentElement.remove();
+  var foxImg = document.querySelector('img[id-number="' + profileIndex + '"]');
+  foxImg.parentElement.remove();
+
   switchView('collection');
 }
 
