@@ -17,7 +17,13 @@ var collectionA = document.querySelector('.collection-a');
 
 var summonA = document.querySelector('.summon-a');
 
+var releaseMeBtn = document.querySelector('.release-btn');
+
+var releaseBeBtn = document.querySelector('.release-modal-btn');
+
 var image = '';
+
+var profileIndex = 0;
 
 function getLoadFox() {
   var xhr = new XMLHttpRequest();
@@ -51,9 +57,7 @@ function acceptFox() {
 
   summonImg.setAttribute('src', 'images/pleasesummon.png');
 
-  // var warningText = document.querySelector('.warning');
   data.collection.push({ foxImage: image, quote: '' });
-  // switchView('')
 
 }
 
@@ -78,13 +82,12 @@ function collectionLoad(query) {
 
 function loadProfile(event) {
   if (event.target.tagName === 'IMG') {
-    // switchView('profile');
-    // consolesole.log('fox profile clicked');
-    // consolesole.log(event.target.getAttribute('id-number'));
-    // consolesole.log(event.target.src);
+
     var profileImg = document.querySelector('.profile-img');
     profileImg.setAttribute('src', event.target.src);
     profileImg.setAttribute('id-number', event.target.getAttribute('id-number'));
+    profileIndex = Number(event.target.getAttribute('id-number'));
+    switchView('profile');
   }
 }
 
@@ -96,32 +99,48 @@ acceptBtn.addEventListener('click', acceptFox);
 
 window.addEventListener('DOMContentLoaded', function (event) {
   collectionLoad(collectionView);
-  // switchView(data.view);
+  switchView(data.view);
 });
 
 foxProfile.addEventListener('click', loadProfile);
 
 function summonView() {
-  // switchView('summon');
+  switchView('summon');
 }
 function collectionShow() {
-  // debugger;
-  // switchView('collection');
+  switchView('collection');
+}
+
+function releaseModal() {
+  var modalDiv = document.querySelector('.modal-div');
+  modalDiv.classList.remove('hidden');
+}
+
+function releaseFox() {
+  data.collection.splice(profileIndex, 1);
+  var modalDiv = document.querySelector('.modal-div');
+  modalDiv.classList.add('hidden');
+  var foxImg = document.querySelectorAll('img[id-number="' + profileIndex + '"]');
+  foxImg[0].parentElement.remove();
+  switchView('collection');
 }
 
 summonA.addEventListener('click', summonView);
 
 collectionA.addEventListener('click', collectionShow);
-// switchview
-// function switchView(view) {
-//   var dataViewList = document.querySelectorAll('div[data-view]');
-//   for (var i = 0; i < dataViewList.length; i++) {
-//     if (dataViewList[i].getAttribute('data-view') !== view) {
-//       dataViewList[i].classList.add('hidden');
-//     } else if (dataViewList[i].getAttribute('data-view') === view) {
-//       dataViewList[i].classList.remove('hidden');
-//     }
-//   }
-//   data.view = view;
+function switchView(view) {
+  var dataViewList = document.querySelectorAll('div[data-view]');
+  for (var i = 0; i < dataViewList.length; i++) {
+    if (dataViewList[i].getAttribute('data-view') !== view) {
+      dataViewList[i].classList.add('hidden');
+    } else if (dataViewList[i].getAttribute('data-view') === view) {
+      dataViewList[i].classList.remove('hidden');
+    }
+  }
+  data.view = view;
 
-// }
+}
+
+releaseMeBtn.addEventListener('click', releaseModal);
+
+releaseBeBtn.addEventListener('click', releaseFox);
