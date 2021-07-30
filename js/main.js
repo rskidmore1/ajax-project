@@ -91,18 +91,18 @@ function loadProfile(event) {
   }
 }
 
-summonBtn.addEventListener('click', getLoadFox);
+function switchView(view) {
+  var dataViewList = document.querySelectorAll('div[data-view]');
+  for (var i = 0; i < dataViewList.length; i++) {
+    if (dataViewList[i].getAttribute('data-view') !== view) {
+      dataViewList[i].classList.add('hidden');
+    } else if (dataViewList[i].getAttribute('data-view') === view) {
+      dataViewList[i].classList.remove('hidden');
+    }
+  }
+  data.view = view;
 
-rejectBtn.addEventListener('click', rejectFox);
-
-acceptBtn.addEventListener('click', acceptFox);
-
-window.addEventListener('DOMContentLoaded', function (event) {
-  collectionLoad(collectionView);
-  switchView(data.view);
-});
-
-foxProfile.addEventListener('click', loadProfile);
+}
 
 function summonView() {
   switchView('summon');
@@ -128,19 +128,20 @@ function releaseFox() {
 summonA.addEventListener('click', summonView);
 
 collectionA.addEventListener('click', collectionShow);
-function switchView(view) {
-  var dataViewList = document.querySelectorAll('div[data-view]');
-  for (var i = 0; i < dataViewList.length; i++) {
-    if (dataViewList[i].getAttribute('data-view') !== view) {
-      dataViewList[i].classList.add('hidden');
-    } else if (dataViewList[i].getAttribute('data-view') === view) {
-      dataViewList[i].classList.remove('hidden');
-    }
-  }
-  data.view = view;
-
-}
 
 releaseMeBtn.addEventListener('click', releaseModal);
 
 releaseBeBtn.addEventListener('click', releaseFox);
+
+summonBtn.addEventListener('click', getLoadFox);
+
+rejectBtn.addEventListener('click', rejectFox);
+
+acceptBtn.addEventListener('click', acceptFox);
+
+foxProfile.addEventListener('click', loadProfile);
+
+window.addEventListener('DOMContentLoaded', function (event) {
+  collectionLoad(collectionView);
+  switchView(data.view);
+});
