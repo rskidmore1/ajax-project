@@ -25,6 +25,12 @@ var stayBtn = document.querySelector('.stay-modal-btn');
 
 var quoteBtn = document.querySelector('.quote-btn');
 
+var quoteModal = document.querySelector('.quote-modal-div');
+
+var keepBtn = document.querySelector('.keep-modal-btn');
+
+var newQuoteBtn = document.querySelector('.quote-modal-btn');
+
 var image = '';
 
 var profileIndex = 0;
@@ -126,13 +132,13 @@ function collectionShow() {
 }
 
 function releaseModal() {
-  var modalDiv = document.querySelector('.modal-div');
+  var modalDiv = document.querySelector('.release-modal-div');
   modalDiv.classList.remove('hidden');
 }
 
 function releaseFox() {
   data.collection.splice(profileIndex, 1);
-  var modalDiv = document.querySelector('.modal-div');
+  var modalDiv = document.querySelector('.release-modal-div');
   modalDiv.classList.add('hidden');
   var foxImg = document.querySelector('img[id-number="' + profileIndex + '"]');
   foxImg.parentElement.remove();
@@ -141,11 +147,26 @@ function releaseFox() {
 }
 
 function stay() {
-  var modalDiv = document.querySelector('.modal-div');
+  var modalDiv = document.querySelector('.release-modal-div');
   modalDiv.classList.add('hidden');
 }
 
+function showQuoteModal() {
+  if (data.collection[profileIndex].quote === '') {
+    getQuote();
+  } else {
+    quoteModal.classList.remove('hidden');
+    // getQuote();
+  }
+}
+
+function getNewQuote() {
+  getQuote();
+  quoteModal.classList.add('hidden');
+}
+
 function getQuote() {
+
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://animechan.vercel.app/api/random'); // curl -XGET 'https://dashboard.nbshare.io/api/v1/apps/reddit'
 
@@ -167,6 +188,11 @@ function getQuote() {
 
   });
   xhr.send();
+
+}
+
+function keepQuote() {
+  quoteModal.classList.add('hidden');
 }
 
 summonA.addEventListener('click', summonView);
@@ -187,7 +213,11 @@ foxProfile.addEventListener('click', loadProfile);
 
 stayBtn.addEventListener('click', stay);
 
-quoteBtn.addEventListener('click', getQuote);
+quoteBtn.addEventListener('click', showQuoteModal);
+
+keepBtn.addEventListener('click', keepQuote);
+
+newQuoteBtn.addEventListener('click', getNewQuote);
 
 window.addEventListener('DOMContentLoaded', function (event) {
 
