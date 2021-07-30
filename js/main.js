@@ -21,6 +21,10 @@ var releaseMeBtn = document.querySelector('.release-btn');
 
 var releaseBeBtn = document.querySelector('.release-modal-btn');
 
+var stayBtn = document.querySelector('.stay-modal-btn');
+
+var quoteBtn = document.querySelector('.quote-btn');
+
 var image = '';
 
 var profileIndex = 0;
@@ -72,7 +76,12 @@ function collectionLoad(query) {
       collectionImg.classList.add('collection-img');
       collectionImg.setAttribute('src', data.collection[i].foxImage);
       collectionImg.setAttribute('id-number', i);
+      var collectionText = document.createElement('p');
+      collectionText.classList.add('collection-text');
+      collectionText.classList.add('merienda');
+      collectionText.textContent = data.collection[i].quote;
       thirdColdiv.appendChild(collectionImg);
+      thirdColdiv.appendChild(collectionText);
       query.childNodes[1].appendChild(thirdColdiv);
     }
 
@@ -81,12 +90,17 @@ function collectionLoad(query) {
 }
 
 function loadProfile(event) {
+  var profileImg = document.querySelector('.profile-img');
+  var quoteText = document.querySelector('.quote');
   if (event.target.tagName === 'IMG') {
 
-    var profileImg = document.querySelector('.profile-img');
     profileImg.setAttribute('src', event.target.src);
     profileImg.setAttribute('id-number', event.target.getAttribute('id-number'));
     profileIndex = Number(event.target.getAttribute('id-number'));
+    quoteText.textContent = event.target.parentElement.querySelector('p').textContent;
+
+    data.editing = [data.collection[profileIndex], profileIndex];
+
     switchView('profile');
   }
 }
@@ -126,6 +140,35 @@ function releaseFox() {
   switchView('collection');
 }
 
+function stay() {
+  var modalDiv = document.querySelector('.modal-div');
+  modalDiv.classList.add('hidden');
+}
+
+function getQuote() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://animechan.vercel.app/api/random'); // curl -XGET 'https://dashboard.nbshare.io/api/v1/apps/reddit'
+
+  var quoteP = document.querySelector('.quote');
+
+  xhr.responseType = 'json';
+  xhr.addEventListener('load', function () {
+
+    var quote = xhr.response.quote;
+    var quoteWords = quote.split(' ');
+    if (quoteWords.length > 50) {
+      var quoteSent = quote.split('.');
+      quoteSent.splice(0, 3);
+      quote = quoteSent.join();
+    }
+
+    quoteP.textContent = quote;
+    data.collection[profileIndex].quote = xhr.response.quote;
+
+  });
+  xhr.send();
+}
+
 summonA.addEventListener('click', summonView);
 
 collectionA.addEventListener('click', collectionShow);
@@ -142,7 +185,13 @@ acceptBtn.addEventListener('click', acceptFox);
 
 foxProfile.addEventListener('click', loadProfile);
 
+stayBtn.addEventListener('click', stay);
+
+quoteBtn.addEventListener('click', getQuote);
+
 window.addEventListener('DOMContentLoaded', function (event) {
+
   collectionLoad(collectionView);
   switchView(data.view);
+
 });
