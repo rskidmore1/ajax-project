@@ -156,7 +156,6 @@ function showQuoteModal() {
     getQuote();
   } else {
     quoteModal.classList.remove('hidden');
-    // getQuote();
   }
 }
 
@@ -168,7 +167,7 @@ function getNewQuote() {
 function getQuote() {
 
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://animechan.vercel.app/api/random'); // curl -XGET 'https://dashboard.nbshare.io/api/v1/apps/reddit'
+  xhr.open('GET', 'https://animechan.vercel.app/api/random');
 
   var quoteP = document.querySelector('.quote');
 
