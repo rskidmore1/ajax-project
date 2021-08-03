@@ -194,6 +194,15 @@ function keepQuote() {
   quoteModal.classList.add('hidden');
 }
 
+function reloadFoxProfile() {
+  var profileImg = document.querySelector('.profile-img');
+  var quoteText = document.querySelector('.quote');
+  profileImg.setAttribute('src', data.editing[0].foxImage);
+  profileImg.setAttribute('id-number', data.editing[1]);
+  profileIndex = data.editing[1];
+  quoteText.textContent = data.editing[0].quote;
+}
+
 summonA.addEventListener('click', summonView);
 
 collectionA.addEventListener('click', collectionShow);
@@ -222,5 +231,10 @@ window.addEventListener('DOMContentLoaded', function (event) {
 
   collectionLoad(collectionView);
   switchView(data.view);
+
+  if (data.view === 'profile') {
+    reloadFoxProfile();
+
+  }
 
 });
