@@ -31,6 +31,8 @@ var keepBtn = document.querySelector('.keep-modal-btn');
 
 var newQuoteBtn = document.querySelector('.quote-modal-btn');
 
+var modal = document.querySelectorAll('.overlay');
+
 var image = '';
 
 var profileIndex = 0;
@@ -54,9 +56,6 @@ function rejectFox() {
   acceptBtnDiv.classList.add('hidden');
 
   summonImg.setAttribute('src', 'images/pleasesummon.png');
-
-  var warningText = document.querySelector('.warning');
-  warningText.textContent = '';
 
 }
 
@@ -227,6 +226,14 @@ keepBtn.addEventListener('click', keepQuote);
 
 newQuoteBtn.addEventListener('click', getNewQuote);
 
+modal[0].addEventListener('click', function (event) {
+  event.target.parentElement.classList.add('hidden');
+});
+
+modal[1].addEventListener('click', function (event) {
+  event.target.parentElement.classList.add('hidden');
+});
+
 window.addEventListener('DOMContentLoaded', function (event) {
 
   collectionLoad(collectionView);
@@ -234,7 +241,6 @@ window.addEventListener('DOMContentLoaded', function (event) {
 
   if (data.view === 'profile') {
     reloadFoxProfile();
-
   }
 
 });
