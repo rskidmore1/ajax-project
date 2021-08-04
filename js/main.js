@@ -31,6 +31,8 @@ var keepBtn = document.querySelector('.keep-modal-btn');
 
 var newQuoteBtn = document.querySelector('.quote-modal-btn');
 
+var modal = document.querySelectorAll('.overlay');
+
 var image = '';
 
 var profileIndex = 0;
@@ -54,9 +56,6 @@ function rejectFox() {
   acceptBtnDiv.classList.add('hidden');
 
   summonImg.setAttribute('src', 'images/pleasesummon.png');
-
-  var warningText = document.querySelector('.warning');
-  warningText.textContent = '';
 
 }
 
@@ -194,6 +193,15 @@ function keepQuote() {
   quoteModal.classList.add('hidden');
 }
 
+function reloadFoxProfile() {
+  var profileImg = document.querySelector('.profile-img');
+  var quoteText = document.querySelector('.quote');
+  profileImg.setAttribute('src', data.editing[0].foxImage);
+  profileImg.setAttribute('id-number', data.editing[1]);
+  profileIndex = data.editing[1];
+  quoteText.textContent = data.editing[0].quote;
+}
+
 summonA.addEventListener('click', summonView);
 
 collectionA.addEventListener('click', collectionShow);
@@ -218,9 +226,21 @@ keepBtn.addEventListener('click', keepQuote);
 
 newQuoteBtn.addEventListener('click', getNewQuote);
 
+modal[0].addEventListener('click', function (event) {
+  event.target.parentElement.classList.add('hidden');
+});
+
+modal[1].addEventListener('click', function (event) {
+  event.target.parentElement.classList.add('hidden');
+});
+
 window.addEventListener('DOMContentLoaded', function (event) {
 
   collectionLoad(collectionView);
   switchView(data.view);
+
+  if (data.view === 'profile') {
+    reloadFoxProfile();
+  }
 
 });
