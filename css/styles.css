@@ -163,13 +163,6 @@ img {
 }
 
 .modal {
-  /* width: 375px;
-  height: 160px;
-  position: absolute;
-  top: 20%;
-  left: 30%;
-  right: 30%;
-  padding: 0.5rem; */
   padding: 0.5rem;
   position: absolute;
   width: 375px;
