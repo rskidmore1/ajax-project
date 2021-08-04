@@ -207,6 +207,7 @@ img {
 
   .image {
     margin-top: 2rem;
+    height: 20rem;
     width: 70%;
     object-fit: scale-down;
   }
