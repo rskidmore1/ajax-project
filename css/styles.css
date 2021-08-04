@@ -163,13 +163,21 @@ img {
 }
 
 .modal {
-  width: 375px;
+  /* width: 375px;
   height: 160px;
   position: absolute;
   top: 20%;
   left: 30%;
   right: 30%;
+  padding: 0.5rem; */
   padding: 0.5rem;
+  position: absolute;
+  width: 375px;
+  height: 160px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 
 @media screen and (max-width: 500px) {
@@ -184,9 +192,11 @@ img {
   .modal {
     height: 230px;
     width: 170px;
-    position: relative;
-    top: 30%;
-    left: 30%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     padding: 0.5rem;
   }
 
