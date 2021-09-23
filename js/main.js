@@ -47,6 +47,10 @@ function getLoadFox() {
     summonBtn.classList.add('hidden');
     acceptBtnDiv.classList.remove('hidden');
   });
+  xhr.onerror = function () {
+    // eslint-disable-next-line no-console
+    console.log('Error: 404. Fox API cannot be reached. Please check network connection');
+  };
   xhr.send();
 }
 
@@ -185,6 +189,10 @@ function getQuote() {
     data.collection[profileIndex].quote = xhr.response.quote;
 
   });
+  xhr.onerror = function () {
+    // eslint-disable-next-line no-console
+    console.log('Error: 404. Quotes API cannot be reached. Please check network connection');
+  };
   xhr.send();
 
 }
