@@ -63,6 +63,14 @@ main {
   object-fit: scale-down;
 }
 
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+}
+
 .orange-color {
   background-color: #f3a330;
 }
