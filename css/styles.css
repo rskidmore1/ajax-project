@@ -186,6 +186,53 @@ img {
   right: 0;
 }
 
+.image-div {
+  width: 480px;
+}
+
+.summon-spinner-top-margin {
+  margin-top: 30%;
+}
+
+.summon-spinner {
+  height: 300px;
+}
+
+
+/* Loading section2 */
+
+.lds-circle {
+  transform: translateZ(1px);
+}
+
+.lds-circle > div {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f3a330;
+  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+@keyframes lds-circle {
+  0%,
+  100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
+
 @media screen and (max-width: 500px) {
   .nav a {
     display: block;
