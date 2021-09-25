@@ -186,10 +186,7 @@ img {
   right: 0;
 }
 
-.image-div {
-  width: 480px;
-}
-
+/* Spinners and loading */
 .summon-spinner-top-margin {
   margin-top: 30%;
 }
@@ -197,9 +194,6 @@ img {
 .summon-spinner {
   height: 300px;
 }
-
-
-/* Loading section2 */
 
 .lds-circle {
   transform: translateZ(1px);
