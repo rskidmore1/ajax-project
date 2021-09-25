@@ -37,20 +37,47 @@ var image = '';
 
 var profileIndex = 0;
 
+var summonSpinner = document.querySelector('.summon-spinner');
+var summonImage = document.querySelector('.summon-img');
+
 function getLoadFox() {
+
+  summonImage.classList.add('hidden');
+  summonSpinner.classList.remove('hidden');
+
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://randomfox.ca/floof/');
+  xhr.timeout = 4000;
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
+    summonImage.classList.remove('hidden');
+    summonSpinner.classList.add('hidden');
+
     summonImg.setAttribute('src', xhr.response.image);
     image = xhr.response.image;
+
     summonBtn.classList.add('hidden');
     acceptBtnDiv.classList.remove('hidden');
   });
-  xhr.onerror = function () {
-    // eslint-disable-next-line no-console
-    console.log('Error: 404. Fox API cannot be reached. Please check network connection');
+
+  xhr.ontimeout = function (event) {
+    var summmonErrorText = document.querySelector('.summon-error-p');
+
+    summonImage.classList.remove('hidden');
+    summonSpinner.classList.add('hidden');
+    summmonErrorText.textContent = 'Network error: please try again.';
+
   };
+
+  xhr.onerror = function () {
+    var summmonErrorText = document.querySelector('.summon-error-p');
+
+    summonImage.classList.remove('hidden');
+    summonSpinner.classList.add('hidden');
+    summmonErrorText.textContent = 'No internet. Please reconnect and try again.';
+
+  };
+
   xhr.send();
 }
 
@@ -168,14 +195,20 @@ function getNewQuote() {
 }
 
 function getQuote() {
+  var quoteSpinner = document.querySelector('.quote-spinner');
+  var quoteP = document.querySelector('.quote');
+
+  quoteP.classList.add('hidden');
+  quoteSpinner.classList.remove('hidden');
 
   var xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://animechan.vercel.app/api/random');
 
-  var quoteP = document.querySelector('.quote');
-
+  xhr.timeout = 4000;
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
+    quoteSpinner.classList.add('hidden');
+    quoteP.classList.remove('hidden');
 
     var quote = xhr.response.quote;
     var quoteWords = quote.split(' ');
@@ -189,9 +222,23 @@ function getQuote() {
     data.collection[profileIndex].quote = xhr.response.quote;
 
   });
+
+  xhr.ontimeout = function (event) {
+    var quoteError = document.querySelector('.quote-error');
+
+    quoteP.classList.remove('hidden');
+    quoteSpinner.classList.add('hidden');
+
+    quoteError.textContent = 'Error: 404. Quotes API cannot be reached.Please check network connection';
+
+  };
+
   xhr.onerror = function () {
-    // eslint-disable-next-line no-console
-    console.log('Error: 404. Quotes API cannot be reached. Please check network connection');
+    var quoteError = document.querySelector('.quote-error');
+    quoteSpinner.classList.add('hidden');
+    quoteP.classList.remove('hidden');
+    quoteError.textContent = 'Error: 404. Quotes API cannot be reached.Please check network connection';
+
   };
   xhr.send();
 

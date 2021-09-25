@@ -49,8 +49,14 @@
       <div class="summon-view " data-view="summon">
         <div class="row">
           <div class="column-full ">
-            <div class="image-div center">
-              <img class="image center " src="images/pleasesummon.png" />
+            <div class="image-div center ">
+              <div class="summon-spinner lds-circle center hidden">
+                <div class="center summon-spinner-top-margin"></div>
+              </div>
+
+              <img class="image center summon-img" src="images/pleasesummon.png" />
+              <p class="summon-error-p center"></p>
+
             </div>
           </div>
         </div>
@@ -154,7 +160,13 @@
 
         <div class="row">
           <div class="column-full ">
+
+            <div class="quote-spinner lds-circle center hidden">
+              <div class="center"></div>
+            </div>
             <p class="quote center-text merienda"></p>
+            <p class="quote-error center-text"></p>
+
           </div>
         </div>
 
