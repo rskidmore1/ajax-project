@@ -15,7 +15,7 @@ In my mind the premise is simple and fun, but the functionality can be applied t
 
 
 ### Live Link 
-[Github Pages](https://rskidmore1.github.io/ajax-project/)
+[Github Pages](https://rskidmore1.github.io/foxie-quotes/)
 
 ### Technologies
 * HTML
