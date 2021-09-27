@@ -1,3 +1,4 @@
+/* Header */
 header {
   background-color: #f3a330;
   margin: 0;
@@ -19,6 +20,7 @@ main {
   margin-top: 0.5rem;
 }
 
+/* Font  */
 .alfa-font {
   font-family: 'Alfa Slab One', cursive;
 }
@@ -27,13 +29,46 @@ main {
   color: #faf2e4;
 }
 
-.no-decoration {
-  text-decoration: none;
+.merienda {
+  font-family: 'Merienda', cursive;
+}
+
+.merienda-fontsize {
+  font-size: larger;
+}
+
+/* Elemnt specific tags  */
+
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
 }
 
 .nav {
   margin-top: 1rem;
   font-weight: bold;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.image {
+  margin-top: 2rem;
+  height: 30rem;
+  width: 70%;
+  object-fit: scale-down;
+}
+
+img {
+  width: 100%;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .spacing {
@@ -44,10 +79,6 @@ main {
   float: right;
 }
 
-.left {
-  float: left;
-}
-
 .width-50 {
   width: 50%;
 }
@@ -56,20 +87,11 @@ main {
   width: 50%;
 }
 
-.image {
-  margin-top: 2rem;
-  height: 30rem;
-  width: 70%;
-  object-fit: scale-down;
+.no-border {
+  border: 0 solid black;
 }
 
-button {
-  cursor: pointer;
-}
-
-a {
-  cursor: pointer;
-}
+/* Colors */
 
 .orange-color {
   background-color: #f3a330;
@@ -87,9 +109,15 @@ a {
   border-radius: 5px;
 }
 
-.no-border {
-  border: 0 solid black;
+.center-text {
+  text-align: center;
 }
+
+.nav-ham {
+  visibility: hidden;
+}
+
+/* Button */
 
 .main-btn-margin {
   margin: 1rem;
@@ -111,26 +139,6 @@ a {
   padding: 0.5rem 0.5rem;
 }
 
-.center-text {
-  text-align: center;
-}
-
-.merienda {
-  font-family: 'Merienda', cursive;
-}
-
-.merienda-fontsize {
-  font-size: larger;
-}
-
-img {
-  width: 100%;
-}
-
-.nav-ham {
-  visibility: hidden;
-}
-
 .collection-item {
   padding: 2rem 0.5rem;
   border: 0.2px solid rgb(192, 192, 192);
@@ -143,10 +151,6 @@ img {
 .collection-item:hover {
   background-color: gray;
   transition: 0.5s;
-}
-
-.pointer {
-  cursor: pointer;
 }
 
 .collection-img {
@@ -165,6 +169,8 @@ img {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+/* Modal */
 
 .overlay {
   top: 0;
@@ -186,7 +192,8 @@ img {
   right: 0;
 }
 
-/* Spinners and loading */
+
+/* Loading spinners */
 .summon-spinner-top-margin {
   margin-top: 30%;
 }
@@ -224,40 +231,5 @@ img {
 
   100% {
     transform: rotateY(3600deg);
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .nav a {
-    display: block;
-  }
-
-  .width-50 {
-    width: 100%;
-  }
-
-  .modal {
-    height: 230px;
-    width: 170px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    padding: 0.5rem;
-  }
-
-  .modal-btn-mobile {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    float: none;
-  }
-
-  .image {
-    margin-top: 2rem;
-    height: 20rem;
-    width: 70%;
-    object-fit: scale-down;
   }
 }
