@@ -27,13 +27,18 @@ In my mind the premise is simple and fun, but the functionality can be applied t
 * Loading spinner: to indicate when results are coming 
 * Warning message: when API calls fails or network connectivity fails
 
-### Features
+### Finished Features
 * Summon a fox via [Random fox](https://randomfox.ca/floof/')
 * Add it to a Collection
 * Release the fox from the Collection
 * Request a quote from the fox via [Anime Chan](https://animechan.vercel.app/api/random)
 * Request a new quote from the fox
 
+### Stretch Features 
+* Record of Released foxes
+* Record of replaced quotes
+
+### Gifs
 ![deepin-screen-recorder_chromium-browser_20210927150737](https://user-images.githubusercontent.com/11698908/134992139-ed6ad692-1996-4b35-af58-112373a8be1e.gif)
 ![deepin-screen-recorder_chromium-browser_20210927150414](https://user-images.githubusercontent.com/11698908/134992141-0abb13a6-9181-4c95-ad57-1711ba04e70c.gif)
 
