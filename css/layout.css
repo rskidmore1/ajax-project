@@ -36,38 +36,3 @@
     width: calc(80% / 3);
   }
 }
-
-@media screen and (max-width: 500px) {
-  .nav a {
-    display: block;
-  }
-
-  .width-50 {
-    width: 100%;
-  }
-
-  .modal {
-    height: 230px;
-    width: 170px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    padding: 0.5rem;
-  }
-
-  .modal-btn-mobile {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    float: none;
-  }
-
-  .image {
-    margin-top: 2rem;
-    height: 20rem;
-    width: 70%;
-    object-fit: scale-down;
-  }
-}
