@@ -50,6 +50,6 @@ In my mind the premise is simple and fun, but the functionality can be applied t
 
 ### Run it 
 1. Git clone repo 
-2. `cd ajax-project`
+2. `cd foxie-quotes`
 3. Run `npm i`
 4. Open index.html
